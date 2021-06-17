@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fpshop.HomeMapper">
+	<insert id="insUser">
+		INSERT INTO user
+		(provider, user_id, user_pw, email, name, tel, zipcode, addr )
+		VALUES
+		( #{provider}, #{user_id}, #{user_pw}, #{email}, #{name}, #{tel}, #{zipcode}, #{addr} )
+	</insert>
+
+	<select id="selUser" resultType="UserEntity">
+		SELECT * FROM user
+		WHERE user_id = #{user_id}
+		AND provider = #{provider}
+	</select>
+</mapper>

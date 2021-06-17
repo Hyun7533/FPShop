@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default_layout">
+<head>
+    <meta charset="UTF-8">
+    <title>JOIN</title>
+
+    <th:block layout:fragment="css">
+        <link rel="stylesheet" th:href="@{/css/join.css}">
+    </th:block>
+
+    <th:block layout:fragment="script">
+        <script th:src="@{/js/join.js}"></script>
+    </th:block>
+</head>
+<body layout:fragment="content">
+    <div class="wrap">
+        <div class="site-wrap">
+            <h2>회원가입</h2>
+            <form th:action="@{/join}" th:method="post">
+                <table>
+                    <thead>
+                    <tr width="100%">
+                        <th width="30%">아이디</th>
+                        <th width="70%">
+                            <input class="input" type="text" name="user_id">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <th>
+                            <input class="input" type="password" name="user_pw">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <th>
+                            <input class="input" type="text" name="email">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <th>
+                            <input class="input" type="text" name="name">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>휴대전화</th>
+                        <th>
+                            <input class="front" type="text" value="010"> -
+                            <input class="middle" type="text" name="tel"> -
+                            <input class="back" type="text" name="tel">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>우편번호</th>
+                        <th>
+                            <input class="input" type="text" name="zipcode">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <th>
+                            <input class="input" type="text" name="addr">
+                        </th>
+                    </tr>
+                    </thead>
+
+                </table>
+                <div class="btn-area">
+                    <input type="submit" class="join-btn" value="회원가입" readonly/>
+                    <input type="hidden" name="provider" value="fp_shop">
+<!--                    <input th:type="hidden" th:name="${ _csrf.parameterName}" th:value="${_csrf.token}">-->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

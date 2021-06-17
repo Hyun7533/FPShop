@@ -1,0 +1,61 @@
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <script src="https://kit.fontawesome.com/bab8302c5b.js" crossorigin="anonymous"></script>
+</head>
+<!--footerFragment 선언-->
+<div th:fragment="footerFragment">
+    <div class="footer_container">
+        <ul class="footer_flexbox">
+            <div class="callcenter_box">
+                <li class="callcenter">
+                    <h4>상담센터</h4>
+                    <h2><i class="fas fa-phone-alt"></i>02-1234-56789</h2>
+                    <div class="callcenter_textbox">
+                        운영시간 : 09:00 ~ 18:00<br>
+                        점심시간 : 12:00 ~ 13:00<br>
+                        토, 일, 공휴일은 휴무 입니다.
+                    </div>
+                </li>
+            </div>
+            <div class="bank_box">
+                <li class="bank">
+                    <h4>입금계좌안내</h4>
+                    <h4>국민은행 120-34567-89</h4>
+                    <h4>예금주 : 홍길동</h4>
+                </li>
+            </div>
+            <div class="shortcuts_box">
+                <li class="shortcuts">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li class="icon_list"><a href=""><i class="fas fa-shopping-basket"></i><br>장바구니</a></li>
+                        <li class="icon_list"><a href=""><i class="fas fa-heart"></i><br>관심상품</a></li>
+                        <li class="icon_list"><a href=""><i class="fas fa-file-alt"></i><br>주문조회</a></li>
+                        <li class="icon_list"><a href=""><i class="fas fa-flag"></i><br>공지사항</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="company_box">
+                <li class="company">
+                    <div class="company_textbox">
+                        <a class="a" href="">회사소개</a>
+                        <a class="a" href="">이용안내</a>
+                        <a class="a" href="">개인정보취급방침</a>
+                        <a class="a" href="">이용약관</a>
+                    </div>
+                    <div>
+                        <span>상호 : 모던하우스</span><br>
+                        <span>대표자 : 홍길동</span><br>
+                        <span>전화 : 02-1234-56789</span><br>
+                        <span>팩스 : 02-9876-54321</span><br>
+                        <span>개인정보관리책임자 : 홍길동</span><br>
+                        <span>메일 : design_pb@naver.com</span><br>
+                        <span>주소 : 03138 서울특별시 종로구 돈화문로8길 20 (묘동) 삼오빌딩 4F 웹퍼블릭</span>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div class="design_by">COPYRIGHT(C) FPShop. ALL RIGHTS RESERVED DESIGN BY. FPShop</div>
+</div>

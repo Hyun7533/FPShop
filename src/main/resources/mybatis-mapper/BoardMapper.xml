@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fpshop.board.BoardMapper">
+
+	<!-- 데이터 삽입 -->
+	<insert id="insBoard" useGeneratedKeys="true" keyProperty="board_no">
+		INSERT INTO board
+		(seq, title, ctnt, user_pk)
+		SELECT IFNULL(MAX(seq), 0) + 1, #{title}, #{ctnt}, #{user_pk} FROM board
+	</insert>
+	
+	<!-- 데이터 수정 -->
+	<update id="updBoard">
+		UPDATE board
+		SET title = #{title}
+		, ctnt = #{ctnt}
+		WHERE board_no = #{board_no}
+		AND user_pk = #{user_pk}
+	</update>	
+	
+	<!-- 데이터 삭제 -->
+	<delete id="delBoard">
+		DELETE FROM board
+		WHERE board_no = #{board_no}
+		AND user_pk = #{user_pk}
+	</delete>
+	
+	<select id="selMaxPageNum" resultType="_int">
+		SELECT CEIL(COUNT(A.board_no) / #{recordCntPerPage}) FROM board A
+		INNER JOIN user B
+		ON A.user_pk = B.user_pk
+		
+		<if test="searchType == 1">
+			AND A.title LIKE '%${searchText}%'
+		</if>
+		<if test="searchType == 2">
+			AND A.ctnt LIKE '%${searchText}%'
+		</if>
+		<if test="searchType == 3">
+			AND (A.title LIKE '%${searchText}%' OR A.ctnt LIKE '%${searchText}%')
+		</if>
+		<if test="searchType == 4">
+			AND B.name LIKE '%${searchText}%'
+		</if>
+	</select>
+	
+
+	<!-- 보드리스트 -->
+	<select id="selBoardList" resultType="BoardDomain">
+		
+		SELECT A.board_no, A.seq, A.title, A.registerdate, A.hits
+		, B.user_pk, B.name AS writer_nm
+		FROM board A
+		LEFT JOIN user B
+		ON A.user_pk = B.user_pk
+		<if test="searchType == 1">
+			AND title LIKE CONCAT('%', #{searchText}, '%')
+		</if>
+		<if test="searchType == 2">
+			AND A.ctnt LIKE '%${searchText}%'
+		</if>
+		<if test="searchType == 3">
+			AND (A.title LIKE '%${searchText}%' OR A.ctnt LIKE '%${searchText}%')
+		</if>
+		<if test="searchType == 4">
+			AND B.name LIKE '%${searchText}%'
+		</if>
+		ORDER BY seq DESC
+		LIMIT #{sIdx}, #{recordCntPerPage}
+	</select>
+	
+
+	
+		<!-- 데이터 상세 보이기 -->
+	<select id="selBoard" resultType="BoardDomain">
+		SELECT A.board_no, A.seq, A.title, A.ctnt, A.registerdate, A.hits
+		, B.user_pk, B.name AS writer_nm
+		FROM board A
+		LEFT JOIN user B
+		ON A.user_pk = B.user_pk
+		WHERE board_no = #{board_no}
+	</select>
+	
+</mapper>

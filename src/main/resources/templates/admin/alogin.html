@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <th:block layout:fragment="css">
+        <link rel="stylesheet" th:href="@{/css/alogin.css}">
+    </th:block>
+    <th:block layout:fragment="script">
+        <script th:src="@{/js/alogin.js}"></script>
+    </th:block>
+</head>
+<body>
+<div class="container">
+    <h1>관리자 로그인</h1>
+    <div class="login">
+        <!--            <div th:if="${param.error}">-->
+        <!--                <p th:text="${exception}" class="alert alert-danger"></p>-->
+        <!--            </div>-->
+        <form th:action="@{/login}" th:method="post">
+            <input class="id" th:type="text" th:name="username" placeholder="id를 입력해주세요.">
+            <br>
+            <input class="pw" th:type="password" th:name="password" placeholder="password를 입력해주세요.">
+            <br>
+            <input class="submit" th:type="submit" th:value="로그인">
+            <!--                <input th:type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
+        </form>
+        <a th:href="@{/login}" class="return">관리자가 아니신가요?</a>
+    </div>
+</div>
+</body>
+</html>

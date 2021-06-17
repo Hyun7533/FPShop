@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+div {
+    display: block;
+}
+
+.text {
+    font-size: 15px;
+}
+
+.header-list {
+    float: right;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.inner > .top-wrap > .float-left > ul > li > a {
+    height: 35px;
+    line-height: 35px;
+}
+
+
+.inner > .top-wrap > .float-right > ul > li > a {
+    height: 35px;
+    line-height: 35px;
+}
+
+.inner > .top-wrap > .float-right > ul > div > li > a {
+    height: 35px;
+    line-height: 35px;
+}
+
+.float-right {
+    width: 35%;
+}
+
+.bottom-wrap > ul > li > a{
+    height: 46px;
+    line-height: 46px;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    position: fixed;/*
+    height: 100%; */
+    background-color: white;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 2;
+}
+
+.inner2 {
+    display: flex;
+    justify-content: center;
+    /* height: 100%; */
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.top-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.float-left {
+    float: left;
+}
+
+.middle-wrap {
+    height: 130px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-wrap {
+   margin-top: 35px;
+    height: 130px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.title {
+    font-size: 35px;
+    height: 130px;
+    line-height: 130px;
+    font-family: 'Bitter', serif;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.title:hover {
+    font-size: 400%;
+}
+
+.hover2 {
+    font-size: 15px;
+}
+
+.hover2:after {
+    content: "●";
+    font-size: 5px;
+    color: red;
+    position: relative;
+    opacity: 0;
+    top: -10px;
+    transition: all .5s;
+}
+
+.hover2:hover:after {
+    opacity: 1;
+}
+
+.hover {
+    transition-duration: .5s;
+}
+
+.hover:hover {
+    color: gray;
+}
+
+.bottom-wrap {
+    width: 1200px;
+}
+
+.bottom-wrap > ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    top: 35px;
+    background-color: white;
+    z-index: 1;
+}
+
+.sub_menu {
+    opacity: 0;
+    position: absolute;
+    display: none;
+    border: 1px solid rgb(180, 180, 180);
+    font-size: 15px;
+    background-color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-left: -40px;
+}
+
+.sub_menu > li {
+    width: 130px;
+    height: 40px;
+    padding: 5 5 5 5px;
+
+}
+
+.sub_menu > li:hover {
+    background-color: rgb(180, 180, 180);
+}
+
+#menu_box:hover .sub_menu {
+    opacity: 1;
+    display: block;
+    z-index: 10;
+    float: bottom;
+}

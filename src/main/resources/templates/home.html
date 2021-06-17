@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default_layout">
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{css/home.css}">
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <script th:src="@{js/home.js}"></script>
+</th:block>
+
+<body layout:fragment="content">
+<div style="overflow: hidden;">
+    <div class="container">
+        <div class="inner5">
+            <img src="img/slide_menu/1.jpg">
+        </div>
+        <div class="inner5">
+            <img src="img/slide_menu/2.jpg">
+        </div>
+        <div class="inner5">
+            <img src="img/slide_menu/3.jpg">
+        </div>
+    </div>
+    <div class="btn_area">
+        <button class="btn1">1</button>
+        <button class="btn2">2</button>
+        <button class="btn3">3</button>
+    </div>
+</div>
+<h3>BEST ITEM</h3>
+<div class="container2">
+    <div class="grid_box">
+        <div class="box1">
+            <img class="image" src="img/best_item/1.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/2.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/1.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/2.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/1.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/2.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/1.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/2.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/1.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+        <div class="box1">
+            <img class="image" src="img/best_item/2.jpg" alt="Avatar">
+            <div class="middle">
+                <div class="text">Product Information</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
+
+<script>
+document.querySelector('.btn2').addEventListener('click', function () {
+    document.querySelector('.container').style.transform = 'translate(-100vw)'
+})
+
+document.querySelector('.btn3').addEventListener('click', function () {
+    document.querySelector('.container').style.transform = 'translate(-200vw)'
+})
+
+document.querySelector('.btn1').addEventListener('click', function () {
+    document.querySelector('.container').style.transform = 'translate(0vw)'
+})
+</script>

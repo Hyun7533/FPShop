@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default_layout2">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" th:href="@{/css/adminproduct.css}" >
+</head>
+<body layout:fragment="content2">
+
+<h1>상품 디테일</h1>
+
+<div th:each="item : ${data}">
+
+  <img th:src="@{{path}upload/{img}(path=${T(com.fpshop.commenu.Const).IMG_PATH_PRODUCT},img=${item.pro_mainimg})}">
+  <!-- 위에 풀어 사용 하면<td><img th:src="@{/img/product/upload/{img}(img=${item.pro_mainimg})}"></td>  -->
+
+  <div th:text="${item.typename}"></div>
+  <div th:text="${item.pro_name}"></div>
+  <div th:text="${item.pro_info}"></div>
+  <div th:text="${item.typename}"></div>
+  <div th:text="${item.pro_price}"></div>
+  <div th:text="${item.pro_registerdate}"></div>
+</div>
+
+
+</body>
+</html>

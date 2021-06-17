@@ -1,0 +1,19 @@
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<!--configFragment2 선언-->
+<th:block th:fragment="configFragment2">
+    <!-- 이 영역에 공통으로 사용할 css, js library를 선언한다. -->
+    <link rel="stylesheet" th:href="@{/css/header2.css}" >
+    <script th:src="@{/js/header2.js}"></script>
+    <script src="https://kit.fontawesome.com/bab8302c5b.js" crossorigin="anonymous"></script>
+
+    <!-- Content2 Page의 CSS fragment 삽입 -->
+    <th:block layout:fragment="css"></th:block>
+
+    <!-- Content2 Page의 script fragment 삽입 -->
+    <th:block layout:fragment="script"></th:block>
+
+</th:block>
+</html>

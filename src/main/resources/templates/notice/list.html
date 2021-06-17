@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default_layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <th:block layout:fragment="css">
+        <link rel="stylesheet" th:href="@{/css/board/notice.css}">
+        <link rel="stylesheet" href="information.css">
+    </th:block>
+</head>
+
+<body layout:fragment="content">
+<div class="information_title">공지사항</div>
+<table>
+    <tr>
+        <th style="width: 5%;">번호</th>
+        <th style="width: 30%;">제목</th>
+        <th style="width: 5%;">작성자</th>
+        <th style="width: 5%;">작성일</th>
+        <th style="width: 5%;">조회</th>
+    </tr>
+    <tr>
+        <th>1</th>
+        <th><a href="#">오픈을 축하합니다 !</a></th>
+        <th>홍길동</th>
+        <th>2021-04-03</th>
+        <th>0</th>
+    </tr>
+    <tr>
+        <th>2</th>
+        <th>첫 회원가입시 ----</th>
+        <th>김태현</th>
+        <th>2021-04-05</th>
+        <th>1</th>
+    </tr>
+</table>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.login {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+}
+
+.id {
+    width: 100%;
+    height: 40px;
+    border: solid 1px rgb(180, 180, 180);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.pw {
+    width: 100%;
+    height: 40px;
+    border: solid 1px rgb(180, 180, 180);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.submit {
+    margin-top: 10px;
+    width: 522px;
+    height: 60px;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+.login > ul > .login_list {
+    width: 522px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.list {
+    line-height: 60px;
+    height: 60px;
+    width: 50%;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+#center {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.ask {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.btn_social {
+    line-height: 60px;
+    height: 60px;
+    width: 50%;
+    font-size: 100px;
+}
+
+form {
+	margin-top: 100px;
+}
+
+svg {
+    width: 80px;
+    height: 80px;
+}
+
+.google {
+    margin-right: 15px;
+}
+
+.fa-user-cog {
+    width: 120px;
+    height: 46px;
+    font-size: 30px;
+    margin-left: 5px;
+    color: black;
+    text-align: center;
+    padding-top: 14px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+}

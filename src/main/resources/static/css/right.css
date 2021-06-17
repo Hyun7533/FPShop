@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.right_container {
+    font-size: 20px;
+    position: fixed;
+    right: 0;
+    top: 450px;
+    background-color: white;
+    z-index: 5;
+
+}
+
+.right_content {
+    border-top: 1px solid black;
+    border-left:1px solid black;
+    border-bottom: 1px solid black;
+    border-right: none;
+    /*
+    border-start-start-radius: 5px;
+    border-bottom-left-radius: 5px;
+    */
+}
+
+.right_content > li > a > i {
+    margin: 10px 10px 10px 10px;
+    color: rgb(50, 50, 50);
+}
+
+.right_content > li > a > i:hover {
+    color: gray;
+}
+
+.right_content > li > div > i {
+    margin: 10px 10px 10px 10px;
+    color: rgb(50, 50, 50);
+}
+
+.right_content > li > div > i:hover {
+    color: gray;
+}
+
+.rm_info1 {
+    display: none;
+    position: absolute;
+    right: 50px;
+    bottom: 170px;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.rm_info2 {
+    display: none;
+    position: absolute;
+    right: 50px;
+    bottom: 127px;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.rm_info3 {
+    display: none;
+    position: absolute;
+    right: 50px;
+    bottom: 90px;
+    width: 120px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.rm_info4 {
+    display: none;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.rm_info5 {
+    display: none;
+    position: absolute;
+    right: 50px;
+    bottom: 7px;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+
+.fa-arrow-right {
+    margin-left: 5px;
+}
+
+#info_hover1:hover .rm_info1 {
+    display: inline-block;
+}
+
+#info_hover2:hover .rm_info2 {
+    display: inline-block;
+}
+
+#info_hover3:hover .rm_info3 {
+    display: inline-block;
+}
+
+#info_hover4:hover .rm_info4 {
+    display: inline-block;
+}
+
+#info_hover5:hover .rm_info5 {
+    display: inline-block;
+}
+
+
+

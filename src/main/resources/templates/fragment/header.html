@@ -1,0 +1,85 @@
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:layout="">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<!--headerFragment 선언-->
+<div th:fragment="headerFragment">
+    <div class="inner">
+        <div class="top-wrap">
+            <div class="float-left">
+                <ul>
+                    <li class="header-list"><a class="hover" href="">포토리뷰</a></li>
+                    <li class="header-list"><a class="hover" href="">타임세일</a></li>
+                    <li class="header-list"><a class="hover" href="">브랜드</a></li>
+                </ul>
+            </div>
+            <!-- isAnonymous -->
+
+            <div class="float-right">
+                <ul>
+                    <div th:if="${#authorization.expr('isAuthenticated()')}">
+                        <li class="header-list"><a class="hover" th:href="@{/logout}">로그아웃</a></li>
+                    </div>
+                    <div th:unless="${#authorization.expr('isAuthenticated()')}">
+                        <li class="header-list"><a class="hover" th:href="@{/login}">로그인</a></li>
+                    </div>
+                    <li class="header-list"><a class="hover" href="/join">회원가입</a></li>
+                    <li class="header-list"><a class="hover" href="">장바구니</a></li>
+                    <li class="header-list"><a class="hover" href="">주문조회</a></li>
+                    <li class="header-list" id="menu_box">
+                        <a class="menu" href="">고객센터 <i class="fas fa-caret-down"></i></a>
+                        <ul class="sub_menu">
+                            <li><a href="/notice/list">공지사항</a></li>
+                            <li><a href="">이벤트</a></li>
+                            <li><a href="">포토리뷰</a></li>
+                            <li><a href="">상품 Q&A</a></li>
+                            <li><a href="">자유게시판</a></li>
+                        </ul>
+                    </li>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')">
+                        <li class="header-list"><a class="hover" th:href="@{/admin/productList}">관리자모드</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="logo-wrap">
+        <div class="middle-wrap">
+            <a th:href="@{/home}" class="title">FPShop</a>
+        </div>
+    </div>
+    <div class="inner2">
+        <div class="bottom-wrap">
+            <ul>
+                <li class="header-list"><a class="hover2" th:href="@{/product/outer}">OUTER</a></li>
+                <li class="header-list"><a class="hover2" th:href="@{/product/top}">TOP</a></li>
+                <li class="header-list"><a class="hover2" th:href="@{/product/dress}">DRESS</a></li>
+                <li class="header-list"><a class="hover2" th:href="@{/product/pants}">PANTS</a></li>
+                <li class="header-list"><a class="hover2" th:href="@{/product/skirt}">SKIRT</a></li>
+                <li class="header-list"><a class="hover2" th:href="@{/product/shoes}">SHOES</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+        var inner2 = document.querySelector('.inner2')
+        console.log(inner2)
+        console.log(window.scrollY);
+        var wind = window.scroll;
+
+
+        window.addEventListener('scroll', function (e) {
+            var y = window.scrollY;
+
+            if (y >= 130) {
+                inner2.classList.add('sticky')
+            } else {
+                inner2.classList.remove('sticky')
+            }
+        });
+    </script>
+
+</html>

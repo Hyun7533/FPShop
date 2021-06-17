@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default_layout2">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 모드</title>
+    <link rel="stylesheet" th:href="@{/css/adminproduct.css}" >
+
+    <!-- index.html 고유 스크립트 추가 -->
+    <th:block layout:fragment="script">
+        <script defer th:src="@{/js/admin/productList.js}"></script>
+    </th:block>
+
+</head>
+
+<body layout:fragment="content2">
+<h1>상품 리스트</h1>
+
+<br>
+<br>
+
+<table  border="1">
+    <tr>
+        <th>상품 번호</th>
+        <th>상품 분류 번호</th>
+        <th>상품 사진</th>
+        <th>상품 분류 이름</th>
+        <th>상품 이름</th>
+        <th>상품 정보</th>
+        <th>상품 가격</th>
+        <th>작성 일시</th>
+        <th>삭제 수정</th>
+    </tr>
+
+    <tr  style="margin-left: 30px" class="pointer" th:each="item : ${list}"
+         th:onclick="moveToProductDetail([[${item.pro_no}]])">
+        <td th:text="${item.pro_no}"></td>
+        <td th:text="${item.typ}"></td>
+
+        <td><img th:src="@{{path}upload/{img}(path=${T(com.fpshop.commenu.Const).IMG_PATH_PRODUCT},img=${item.pro_mainimg})}"></td>
+        <!-- 위에 풀어 사용 하면<td><img th:src="@{/img/product/upload/{img}(img=${item.pro_mainimg})}"></td>  -->
+
+        <td th:text="${item.typename}"></td>
+        <td th:text="${item.pro_name}"></td>
+        <td th:text="${item.pro_info}"></td>
+        <td th:text="${item.pro_price}"></td>
+        <td th:text="${item.pro_registerdate}"></td>
+
+        <td><button th:onclick="|clkDel(${item.pro_no})|">삭제</button>
+            <br><br><br>
+            <a th:href="@{/admin/productMod?pro_no=}+${item.pro_no}">
+                <button>수정</button>
+            </a></td>
+    </tr>
+
+
+</table>
+<br>
+
+</body>
+</html>

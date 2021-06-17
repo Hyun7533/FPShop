@@ -1,0 +1,110 @@
+	* {
+
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 50px;
+}
+
+
+table {
+    width: 100%;
+    border-top: 1px solid #aaaaaa;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 15px;
+    color: #aaaaaa;
+    margin-top: 30px;
+
+  }
+th, td {
+    border-bottom: 1px solid #aaaaaa;
+    padding: 10px;
+    height: 48px;
+    color: #aaaaaa;
+}
+
+p {
+    margin-top: 20px;
+}
+
+.input {
+    height: 40px;
+    width: 300px;
+    border: 1px solid #aaaaaa;
+    padding: 0 10px;
+}
+
+.front {
+    height: 40px;
+    width: 100px;
+    padding: 0 10px;
+    border: 1px solid #aaaaaa;
+}
+
+.middle {
+    height: 40px;
+    width: 100px;
+    padding: 0 10px;
+    border: 1px solid #aaaaaa;
+}
+
+.back {
+    height: 40px;
+    width: 100px;
+    padding: 0 10px;
+    border: 1px solid #aaaaaa;
+}
+
+.site-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.fr-view {
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #aaaaaa;
+}
+
+.content {
+    overflow: auto;
+    width: 99%;
+    height: 200px;
+}
+
+.ec-base-box {
+    border-color: #d7d5d5;
+}
+
+.check {
+    text-align: left;
+    margin-top: 20px;
+}
+
+strong {
+    font-size: 20px;
+}
+
+.btn-area {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.join-btn {
+    width: 120px;
+    height: 46px;
+    background-color: rgb(63, 63, 63);
+    color: white;
+    line-height: 46px;
+    text-align: center;
+    text-decoration: none;
+}

@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout/default_layout2">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div th:fragment="headerFragment2">
+    <a th:href="@{/home}"><i class="fas fa-home"></i></a>
+    <div class="mt">FPShop Manager</div>
+    <nav>
+        <ul class="nav_container">
+            <li class="pu"><a class="m_hover" th:href="@{/admin/productUpload}">상품 등록</a></li>
+            <li class="pm"><a class="m_hover" th:href="@{/admin/productList}">상품 목록</a></li>
+            <li class="mm"><a class="m_hover" th:href="@{/admin/productManage}">회원 관리</a></li>
+            <li class="bm"><a class="m_hover" th:href="@{#}">게시판 관리</a></li>
+        </ul>
+    </nav>
+</div>
+</body>
+
+</html>

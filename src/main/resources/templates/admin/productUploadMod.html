@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default_layout2">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/join.css}" >
+</head>
+<body layout:fragment="content2">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script>
+
+<h1 th:text="${data == null} ? '상품 등록' : '상품 수정' "></h1>
+
+
+<form th:action="@{/admin/}+${param.pro_no == null ? 'productUpload' : 'productMod'}" method="post" enctype="multipart/form-data" >
+    <input type="hidden" name="pro_no" th:value="${param.pro_no == null ? 0 : param.pro_no}">
+    <table border="1">
+
+
+        <tbody>
+        <tr>
+
+            <!-- CommonMenu 에서 menulist 데이터 뿌려줌 -->
+            <th>상품 분류</th>
+            <td>
+                <select name="typ">
+                    <option th:each="item : ${menulist}" th:text="${item.mname}" th:type="hidden" th:value="${item.typ}">
+                    </option>
+                </select>
+            </td>
+
+        </tr>
+
+        <tr>
+            <th>상품 이름</th>
+            <td>
+                <input type="text" th:name="pro_name" th:value="${data?.pro_name}">
+            </td>
+        </tr>
+        </tbody>
+
+        <!--  <tr>
+           <th>메인 이미지</th>
+              <td class="select_img" width="1000" height="300" ><img src="" />
+              <input id="mainImg" type="file" name="pro_mainimg" ></td>
+        </tr> -->
+
+        <tr>
+            <th>메인 이미지</th>
+            <td class="select_img" width="1000" height="300" >
+                <img th:if="${data == null}" src="" />
+                <img th:if="${data != null}" th:src="@{{path}upload/{img}(path=${T(com.fpshop.commenu.Const).IMG_PATH_PRODUCT},img=${data?.pro_mainimg})}" />
+                <input id="mainImg" type="file" name="file" th:value="${data?.pro_mainimg}"></td>
+
+        </tr>
+
+        <tr>
+            <th>상품 제목</th>
+            <td>
+                <input type="text" th:name="pro_title" th:value="${data?.pro_title}">
+            </td>
+        </tr>
+
+        <tr>
+            <th>상품 정보</th>
+            <td>
+                <input type="text" th:name="pro_info" th:value="${data?.pro_info}">
+            </td>
+        </tr>
+
+        <tr>
+            <th>상품 가격</th>
+            <td>
+                <input type="number" th:name="pro_price" th:value="${data?.pro_price}">
+            </td>
+        </tr>
+
+    </table>
+
+    <div>
+        <input type="submit" th:value="${data == null} ? '상품 등록' : '상품 수정'">
+    </div>
+
+</form>
+<!--  스크립트는 파일이 등록되면 현재화면에서 어떤 이미지인지 볼 수 있도록 해주는 역할  -->
+<script>
+  $("#mainImg").change(function(){
+   if(this.files && this.files[0]) {
+    var reader = new FileReader;
+    reader.onload = function(data) {
+     $(".select_img img").attr("src", data.target.result).width(500);
+    }
+    reader.readAsDataURL(this.files[0]);
+   }
+  });
+ </script>
+
+</body>
+</html>

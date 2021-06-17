@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default_layout">
+
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/product/outer.css}">
+</th:block>
+
+<body layout:fragment="content">
+<div class="site_wrap">
+    <div class="grid_container">
+        <div class="item">
+            <a th:href="@{/product/outer/details}"><img src="/img/product_img/outer.gif" alt="outer"></a>
+            <ul class="text_area">
+                <i class="fas fa-square"></i>
+                <i class="fas fa-square"></i>
+                <i class="fas fa-square"></i>
+                <li class="product_title">플리키크롭 가디건</li>
+                <li class="product_price">
+                    <h5>15000원</h5>
+                </li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <a href="#"><img src="/img/product_img/outer2.gif" alt="outer"></a>
+            <ul class="text_area">
+                <i class="fas fa-square"></i>
+                <i class="fas fa-square"></i>
+                <i class="fas fa-square"></i>
+                <li class="product_title">버튼크롭 가디건</li>
+                <li class="product_price">
+                    <h5>25000원</h5>
+                </li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <a href="#"><img src="/img/product_img/outer3.gif" alt="outer"></a>
+            <ul class="text_area">
+                <i class="fas fa-square"></i>
+                <i class="fas fa-square"></i>
+                <i class="fas fa-square"></i>
+                <li class="product_title">크롭 후드집업</li>
+                <li class="product_price">
+                    <h5>35000원</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

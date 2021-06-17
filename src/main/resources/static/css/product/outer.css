@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+text_area > li {
+    font-size: 15px;
+}
+
+.site_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 100px;
+}
+
+.item {
+    margin: 20px 20px 20px 20px;
+}
+
+.text_area {
+    text-align: center;
+}
+
+.fa-square {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.product_title {
+    margin-bottom: 5px;
+}
